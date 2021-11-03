@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_life : MonoBehaviour
 {
-    public float health = 100;
+    public float health;
     public GameController gc_script;
     private Collider2D coll;
     //private Animator animator_player;
@@ -15,7 +15,7 @@ public class Player_life : MonoBehaviour
     }
 
     public void Hit(float damage){
-        if(health > 0){
+        if(health >= 0){
             health -= damage;
             gc_script.att_health(health);
             //animator_player.SetInteger("hit", 1);

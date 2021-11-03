@@ -29,6 +29,6 @@ public class Player_movement : MonoBehaviour
         movement.x = joystick.Horizontal;
         movement.y = joystick.Vertical;
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2f, 2f), Mathf.Clamp(transform.position.y, -3.2f, 1000f), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2f, 2f), Mathf.Clamp(transform.position.y, -3.2f, 3.60f), transform.position.z);
     }
 }
