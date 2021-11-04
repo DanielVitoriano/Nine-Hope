@@ -11,6 +11,7 @@ public class Player_powerups : MonoBehaviour
     // valores dos power ups
     public float power_up_time;
     public float speed_increase;
+    public GameObject combat_moon;
     void Start()
     {
         default_speed = gameObject.GetComponent<Player_movement>().speed;
@@ -26,23 +27,29 @@ public class Player_powerups : MonoBehaviour
 
     private void Power_up(int mod){
         // power up 0 //setar os valores para os valores padrões e desativar qualquer efeito de habilidade
-        if(mod == 0){
-            gameObject.GetComponent<Player_movement>().speed = default_speed;
+        switch(mod){
+           case 0:
+                gameObject.GetComponent<Player_movement>().speed = default_speed;
+                combat_moon.SetActive(false);
+                break;
+
+            // power up 1//
+            case 1:
+                gameObject.GetComponent<Player_movement>().speed += speed_increase;
+                combat_moon.SetActive(true);
+                break;
+                
+            // power up 2//
+            case 2:
+                
+                break;
+            // power up 3//
+            case 3:
+                
+                break;
+            // power up 4//
+            // power up 5//
         }
-
-        // power up 1//
-        if(mod == 1){
-            gameObject.GetComponent<Player_movement>().speed += speed_increase;
-        }
-
-        // power up 2//
-
-        // power up 3//
-
-        // power up 4//
-
-        // power up 5//
-
     }
 
     IEnumerator Power_up_time(){

@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
         
     }
     public void att_health(float health){
-       hearts.fillAmount = health / 100;
+       hearts.fillAmount = health / 3;
     }
 
 }
