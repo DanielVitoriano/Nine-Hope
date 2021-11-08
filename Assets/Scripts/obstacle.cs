@@ -22,7 +22,10 @@ public class obstacle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 6){
             other.gameObject.GetComponent<Player_life>().Hit(damage);
-            Destroy(gameObject);
+            destroy_self();
         }
+    }
+    public void destroy_self(){
+        Destroy(gameObject);
     }
 }

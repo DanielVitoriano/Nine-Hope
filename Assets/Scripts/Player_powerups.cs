@@ -7,11 +7,13 @@ public class Player_powerups : MonoBehaviour
 
     // valores padrões
     private float default_speed;
+    private int power_up_mod;
     [Header("Power Up Attributes")]
     // valores dos power ups
     public float power_up_time;
     public float speed_increase;
     public GameObject combat_moon;
+
     void Start()
     {
         default_speed = gameObject.GetComponent<Player_movement>().speed;
@@ -19,9 +21,9 @@ public class Player_powerups : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 7){
-            Power_up(other.gameObject.GetComponent<axolote>().axolote_mod);
+            power_up_mod = other.gameObject.GetComponent<axolote>().axolote_mod;
             Destroy(other.gameObject);
-            StartCoroutine(Power_up_time());
+            Power_up(power_up_mod); // para teste
         }
     }
 
@@ -50,6 +52,11 @@ public class Player_powerups : MonoBehaviour
             // power up 4//
             // power up 5//
         }
+    }
+
+    public void active_power_up(){
+        Power_up(power_up_mod);
+        StartCoroutine(Power_up_time()); 
     }
 
     IEnumerator Power_up_time(){
