@@ -7,7 +7,7 @@ public class obstacle_movement : MonoBehaviour
 
     private GameObject[] gameObj_in_scene;
     private int i;
-    public float speed;
+    private float speed;
     private Vector3 movement = new Vector3(0, 1, 0);
 
     // Start is called before the first frame update
@@ -26,6 +26,7 @@ public class obstacle_movement : MonoBehaviour
 
         foreach(Transform child in transform){
             gameObj_in_scene[i] = child.gameObject;
+            speed = gameObj_in_scene[i].GetComponent<obstacle>().speed;
             gameObj_in_scene[i].transform.position -= movement * speed * Time.deltaTime;
         }
     }

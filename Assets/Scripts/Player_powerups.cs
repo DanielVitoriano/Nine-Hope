@@ -23,7 +23,7 @@ public class Player_powerups : MonoBehaviour
         if(other.gameObject.layer == 7){
             power_up_mod = other.gameObject.GetComponent<axolote>().axolote_mod;
             Destroy(other.gameObject);
-            Power_up(power_up_mod); // para teste
+            //Power_up(power_up_mod); // para teste
         }
     }
 

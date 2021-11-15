@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 8){
-            other.gameObject.GetComponent<obstacle>().destroy_self();
+            other.gameObject.GetComponent<obstacle>().hit();
         }
     }
 
