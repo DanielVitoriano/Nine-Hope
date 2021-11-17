@@ -33,10 +33,10 @@ public class obstacle : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 6){
             other.gameObject.GetComponent<Player_life>().Hit(damage);
-            hit();
+            Hit();
         }
     }
-    public void hit(){
+    public void Hit(){
         health--;
         if(health <= 0){
             Destroy(gameObject);
