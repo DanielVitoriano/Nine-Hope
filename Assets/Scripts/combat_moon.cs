@@ -16,12 +16,11 @@ public class combat_moon : MonoBehaviour
         rotation = new Vector3(0, 0, z);
 
         if(transform.rotation.z >= 360) z =0;
-        
-        transform.eulerAngles = rotation;
+
     }
 
     private void FixedUpdate() {
-
+        transform.eulerAngles = rotation * Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer != 7){

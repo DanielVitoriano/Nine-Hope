@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player_life : MonoBehaviour
 {
-    private bool alive = true;
     public float health;
     public GameController gc_script;
     private Collider2D coll;
@@ -21,12 +20,6 @@ public class Player_life : MonoBehaviour
             gc_script.att_health(health);
             //animator_player.SetInteger("hit", 1);
             coll.enabled = false;
-
-            if(health <=0){
-                GetComponent<Player_movement>().enabled = false;
-                alive = false;
-            }
-
             StartCoroutine(finish_anim_hit());
         }
     }
