@@ -8,11 +8,14 @@ public class GameController : MonoBehaviour
 {
     public Image hearts;
     public GameObject objects;
-    public GameObject buttons;
+    public GameObject menu_buttons, buttons, hearts_menu;
     // Start is called before the first frame update
     void Start()
     {
-        
+        menu_buttons.SetActive(false);
+        buttons.SetActive(false);
+        objects.SetActive(false);
+        hearts_menu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,12 +30,17 @@ public class GameController : MonoBehaviour
 
     public void Game_Over(){
         //objects.GetComponent<obstacle_movement>().enabled = false;
-        buttons.SetActive(true);
-        Time.timeScale = 0;
+        menu_buttons.SetActive(true);
+        buttons.SetActive(false);
+        pause(0);
     }
     public void Restart_Game(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1;
+        buttons.SetActive(true);
+        pause(1);
+    }
+    public void pause(int value){
+        Time.timeScale = value;
     }
 
     public void exit_menu(){
