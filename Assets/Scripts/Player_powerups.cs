@@ -7,7 +7,7 @@ public class Player_powerups : MonoBehaviour
 
     // valores padrões
     private float default_speed;
-    private int power_up_mod;
+    private int power_up_mod = 1; //deixando em 1 para teste
     [Header("Power Up Attributes")]
     // valores dos power ups
     public float power_up_time;
