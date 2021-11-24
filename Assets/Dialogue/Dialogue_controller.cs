@@ -66,6 +66,7 @@ public class Dialogue_controller : MonoBehaviour
                 dialogueObj.SetActive(false);
                 sentences = null;
                 isShowing = false;
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().end_intro();
             }
         }
     }

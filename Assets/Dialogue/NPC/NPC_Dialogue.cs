@@ -27,8 +27,9 @@ public class NPC_Dialogue : MonoBehaviour
     private void show_dialogue(){
         Collider2D hit = Physics2D.OverlapCircle(transform.position, dialogue_ranger, player);
 
-        if(hit != null){
+        if(hit != null && !player_hit){
             Dialogue_controller.instance.Speech(sentences.ToArray(), images_profile.ToArray());
+            player_hit = true;
         }
 
     }

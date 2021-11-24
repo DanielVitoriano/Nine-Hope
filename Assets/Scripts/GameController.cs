@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject axolote_mounted;
+    public GameObject intro;
     public Image hearts;
     public GameObject objects;
     public GameObject menu_buttons, buttons, hearts_menu;
@@ -45,6 +47,14 @@ public class GameController : MonoBehaviour
 
     public void exit_menu(){
         SceneManager.LoadScene("main_menu");
+    }
+    public void end_intro(){
+        menu_buttons.SetActive(false);
+        buttons.SetActive(true);
+        objects.SetActive(true);
+        hearts_menu.SetActive(true);
+        Destroy(intro);
+        axolote_mounted.SetActive(true);
     }
 
 }
